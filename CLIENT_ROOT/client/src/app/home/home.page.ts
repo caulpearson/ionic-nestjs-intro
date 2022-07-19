@@ -15,7 +15,7 @@ export class HomePage implements OnInit {
     this.messages.getMessages().subscribe((res) => {
       console.log(res);
     });
-    this.messages.getMessage('12').subscribe((res) => {
+    this.messages.getMessage('2463').subscribe((res) => {
       console.log(res);
     });
   }

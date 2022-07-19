@@ -1,18 +1,17 @@
 import { Controller, Get, Param } from '@nestjs/common';
+import { QuotesService } from 'src/services/quotes/quotes.service';
 
 @Controller('messages')
 export class MessagesController {
+  constructor(private quotesService: QuotesService) {}
+
   @Get()
   getMessages() {
-    return {
-      message: 'In the real world, all of the messages would be returned',
-    };
+    return this.quotesService.getQuotes();
   }
 
   @Get(':id')
   getMessage(@Param('id') id) {
-    return {
-      message: `In the real world, the message would be returned with id of ${id}`,
-    };
+    return this.quotesService.getQuote(id);
   }
 }
