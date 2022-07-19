@@ -15,4 +15,10 @@ export class MessagesService {
   getMessage(id: string): Observable<Object>{
     return this.http.get(`http://localhost:3000/messages/${id}`);
   }
+  createMessage(message): Observable<Object> {
+    return this.http.post('http://localhost:3000/messages', {
+      content: message.content,
+      submittedBy: message.submittedBy
+    })
+  }
 }

@@ -12,12 +12,18 @@ export class HomePage implements OnInit {
 
 
   ngOnInit(): void {
+    let testMessage = {
+      content: 'Hello',
+      submittedBy: 'Me'
+    };
     this.messages.getMessages().subscribe((res) => {
       console.log(res);
     });
     this.messages.getMessage('2463').subscribe((res) => {
       console.log(res);
     });
+    this.messages.createMessage(testMessage).subscribe((res) => {
+      console.log(res);
+    });
   }
-
 }
