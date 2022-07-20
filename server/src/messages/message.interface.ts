@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-export class MessageDto {
+export interface Message {
   content: string;
   submittedBy: string;
 }
